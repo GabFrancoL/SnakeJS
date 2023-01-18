@@ -1,0 +1,128 @@
+@keyframes easeInAnimation {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 100%;
+    }
+}
+
+body[data-theme='dark'] {
+    --bg1: #000;
+    --fg1: #fff;
+    --fg2: #777;
+    --fg3: #444;
+}
+
+body[data-theme='light'] {
+    --bg1: #fff;
+    --fg1: #000;
+    --fg2: #777;
+    --fg3: #bbb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DotGothic16', sans-serif;
+    background: var(--bg1);
+}
+
+main {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.mainAnimation {
+    animation: easeInAnimation 0.5s linear forwards;
+}
+
+#logo {
+    color: var(--fg1);
+    font-size: 4rem;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+#settings_popup, #controls_popup {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 50vw;
+    height: 50vh;
+    background: var(--bg1);
+}
+
+#menu_options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu_options button {
+    all: unset;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 2rem;
+    color: var(--fg1);
+    margin: 5px;
+    user-select: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+#menu_options button:hover {
+    cursor: pointer;
+    color: var(--fg2);
+    transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 2px 2px 2px var(--fg3);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 5px;
+    color: var(--fg1);
+    width: inherit;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: underline dotted;
+    color: var(--fg1);
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--fg2);
+    transition: color 0.3s;
+}
+
+@media only screen and (max-height: 512px) {
+    #logo {
+        font-size: 3rem;
+        margin-bottom: 5px;
+    }
+
+    #menu_options button {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        font-size: 0.7rem;
+    }
+}

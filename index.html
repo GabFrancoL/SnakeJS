@@ -4,11 +4,46 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="The classic snake game written in javascript">
+        <meta name="description" content="The classic snake game written in pure Javascript">
         <script src="https://kit.fontawesome.com/e321068697.js" crossorigin="anonymous"></script>
         <title>Snake JS</title>
+        <link rel="stylesheet" href="./styles/main.css">
+        <link rel="stylesheet" href="./styles/loading.css">
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     </head>
-    <body>
-        
+    <body data-theme="dark">
+        <div id="loading_container">
+            <p id="loading_text">loading</p>
+            <div id="loading_animation_border">
+                <span id="loading_animation_filler"></span>
+            </div>
+        </div>
+        <main>
+            <div id="logo">
+                <h1>snake</h1>
+            </div>
+            <div id="controls_popup">
+
+            </div>
+            <div id="settings_popup">
+                <button id="toggle_theme">
+                    <button class="close">X</button>
+                    <div id="theme_selector"></div>
+                    <p id="theme_text">dark theme</p>
+                    <button id="prev_difficulty">&lt;</button>
+                    <p id="difficulty_text">normal</p>
+                    <button id="next_difficulty">&gt;</button>
+                </button>
+            </div>
+            <div id="menu_options">
+                <button id="start_btn">start</button>
+                <button id="controls_btn">controls</button>
+                <button id="settings_btn">settings</button>
+            </div>
+            <footer>
+                <p>created by <a href="https://github.com/GabFrancoL" target="_blank">Gabriel Franco</a> | 2023</p>
+            </footer>
+        </main>
+        <script src="./scripts/loading.js"></script>
     </body>
 </html>
