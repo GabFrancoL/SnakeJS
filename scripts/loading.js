@@ -51,18 +51,18 @@ function barAnimationPromise() {
 const animation = Promise.all([textAnimationPromise(), barAnimationPromise()])
 
 animation.then(() => {
-    loading_container.setAttribute('class', 'loadingAnimation')
+    loading_container.setAttribute('class', 'easeOutAnimation')
     setTimeout(() => {
         loading_container.style.display = 'none'
         main.style.display = 'flex'
-        main.setAttribute('class', 'mainAnimation')
+        main.setAttribute('class', 'easeInAnimation')
     }, 500)
 }).catch(err => {
-    loading_container.setAttribute('class', 'loadingAnimation')
+    loading_container.setAttribute('class', 'easeOutAnimation')
     setTimeout(() => {
         loading_container.style.display = 'none'
         main.style.display = 'flex'
-        main.setAttribute('class', 'mainAnimation')
+        main.setAttribute('class', 'easeInAnimation')
     }, 500)
     console.log(err)
 })

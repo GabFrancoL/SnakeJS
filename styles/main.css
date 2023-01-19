@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'DotGothic16', sans-serif;
+    src: url('../fonts/DotGothic16/DotGothic16-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 @keyframes easeInAnimation {
     0% {
         visibility: hidden;
@@ -10,28 +17,58 @@
     }
 }
 
+@keyframes easeOutAnimation {
+    0% {
+        visibility: visible;
+        opacity: 100%;
+    }
+
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.easeOutAnimation {
+    animation: easeOutAnimation 0.5s linear forwards;
+}
+
+.easeOutAnimationPopup {
+    animation: easeOutAnimation 0.2s linear forwards;
+}
+
+.easeInAnimation {
+    animation: easeInAnimation 0.5s linear forwards;
+}
+
+.easeInAnimationPopup {
+    animation: easeInAnimation 0.2s linear forwards;
+}
+
 body[data-theme='dark'] {
     --bg1: #000;
     --fg1: #fff;
-    --fg2: #777;
+    --fg2: #999;
     --fg3: #444;
 }
 
 body[data-theme='light'] {
     --bg1: #fff;
     --fg1: #000;
-    --fg2: #777;
+    --fg2: #555;
     --fg3: #bbb;
 }
 
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 body {
     font-family: 'DotGothic16', sans-serif;
     background: var(--bg1);
+    transition: background 0.3s;
 }
 
 main {
@@ -43,19 +80,17 @@ main {
     width: 100vw;
 }
 
-.mainAnimation {
-    animation: easeInAnimation 0.5s linear forwards;
-}
-
 #logo {
     color: var(--fg1);
     font-size: 4rem;
     margin-bottom: 15px;
-    user-select: none;
 }
 
 #settings_popup, #controls_popup {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     z-index: 100;
     top: 0;
@@ -66,6 +101,65 @@ main {
     width: 50vw;
     height: 50vh;
     background: var(--bg1);
+    color: var(--fg1);
+    font-size: 1.3rem;
+    font-family: 'DotGothic16', sans-serif;
+    border: 2px solid var(--fg2);
+    box-shadow: 2px 2px 2px var(--fg3);
+    transition: background 0.3s;
+}
+
+#selector_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close {
+    width: min-content;
+    height: min-content;
+    all: unset;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 2rem;
+    color: var(--fg1);
+    transition: color 0.3s;
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: var(--fg2);
+    transition: color 0.3s;
+}
+
+#controls_popup h2, #settings_popup h2 {
+    margin-bottom: 15px;
+}
+
+#theme_selector, #difficulty_selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#theme_selector {
+    margin-bottom: 30px;
+}
+
+.selector {
+    all: unset;
+    color: var(--fg1);
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.selector:hover {
+    cursor: pointer;
+    color: var(--fg2);
+    transition: color 0.3s;
 }
 
 #menu_options {
@@ -81,7 +175,6 @@ main {
     font-size: 2rem;
     color: var(--fg1);
     margin: 5px;
-    user-select: none;
     transition: color 0.3s, text-shadow 0.3s;
 }
 

@@ -23,23 +23,33 @@
                 <h1>snake</h1>
             </div>
             <div id="controls_popup">
-
+                <button class="close" id="controls_close_btn">x</button>
+                <h2>controls</h2>
             </div>
             <div id="settings_popup">
-                <button id="toggle_theme">
-                    <button class="close">X</button>
-                    <div id="theme_selector"></div>
-                    <p id="theme_text">dark theme</p>
-                    <button id="prev_difficulty">&lt;</button>
-                    <p id="difficulty_text">normal</p>
-                    <button id="next_difficulty">&gt;</button>
-                </button>
+                <button class="close" id="settings_close_btn">x</button>
+                <h2>settings</h2>
+                <div id="selector_box">
+                    <p>change theme:</p>
+                    <div id="theme_selector">
+                        <button id="prev_theme" class="selector">&lt;&nbsp;</button>
+                        <p id="theme_text">dark theme</p>
+                        <button id="next_theme" class="selector">&nbsp;&gt;</button>
+                    </div>
+                    <p>change difficulty:</p>
+                    <div id="difficulty_selector">
+                        <button id="prev_difficulty" class="selector">&lt;&nbsp;</button>
+                        <p id="difficulty_text" data-value="normal">normal</p>
+                        <button id="next_difficulty" class="selector">&nbsp;&gt;</button>
+                    </div>
+                </div>
             </div>
             <div id="menu_options">
                 <button id="start_btn">start</button>
                 <button id="controls_btn">controls</button>
                 <button id="settings_btn">settings</button>
             </div>
+            <script src="./scripts/popup_screens.js"></script>
             <footer>
                 <p>created by <a href="https://github.com/GabFrancoL" target="_blank">Gabriel Franco</a> | 2023</p>
             </footer>
